@@ -1,9 +1,22 @@
-const App = () => {
-  return (
-    <div className="font-bold text-4xl m-[2em] text-red-600 underline">
-      Hello World
-    </div>
-  );
-};
+/** @format */
 
-export default App;
+import { Link, Route, Routes } from 'react-router-dom'
+import { Navigation } from './Components/Navigation'
+
+import Home from './Pages/Home'
+import { Product } from './Pages/Product'
+
+const App = () => {
+	return (
+		<>
+			<Navigation />
+			<Routes>
+				<Route path='/' element={<Home />} />
+
+				<Route path='/product' element={<Product />} />
+			</Routes>
+		</>
+	)
+}
+
+export default App
