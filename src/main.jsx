@@ -11,8 +11,8 @@ ReactDOM.render(
 	<>
 		<BrowserRouter>
 			<App />
-			<Toaster />
 		</BrowserRouter>
+		<Toaster />
 	</>,
 	document.getElementById('root')
 )
