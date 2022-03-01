@@ -1,10 +1,14 @@
 /** @format */
 
 import React from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import logo from './../../images/pizalogo.png'
+import logo from '../../images/pizalogo.png'
 import cartIcon from '../../images/carts.png'
-export const Navigation = () => {
+import { CartContext } from '../../Pages/CartContext'
+
+const Navigation = () => {
+	const { cart } = useContext(CartContext)
 	return (
 		<nav className='my-3 px-20  flex items-center justify-between '>
 			<Link to='/'>
@@ -23,7 +27,7 @@ export const Navigation = () => {
 				<li className='ml-5'>
 					<Link to='/cart'>
 						<div className='flex'>
-							<span className='mr-1'>10</span>
+							<span className='mr-1'>{cart.totalItems}</span>
 							<img src={cartIcon} alt='logo' className='h-8 ' />
 						</div>
 					</Link>
@@ -32,3 +36,5 @@ export const Navigation = () => {
 		</nav>
 	)
 }
+
+export default Navigation

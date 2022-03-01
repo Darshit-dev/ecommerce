@@ -1,20 +1,36 @@
 /** @format */
 
 import { Link, Route, Routes } from 'react-router-dom'
-import { Navigation } from './Components/Navigation'
+import Navigation from './Components/Navigation'
+import { Cart } from './Pages/Cart'
 
+import { useState, useEffect } from 'react'
+import { CartContext } from './Pages/CartContext'
 import Home from './Pages/Home'
-import { Product } from './Pages/Product'
+import Products from './Pages/Products'
+import SingleProduct from './Pages/SingleProduct'
 
 const App = () => {
+	const [cart, setCart] = useState({})
+
+	useEffect(() => {
+		const cart = window.localStorage.getItem('cart')
+	}, [])
+
+	useEffect(() => {
+		window.localStorage.setItem('cart', JSON.stringify(cart))
+	}, [cart])
+
 	return (
 		<>
-			<Navigation />
-			<Routes>
-				<Route path='/' element={<Home />} />
-
-				<Route path='/product' element={<Product />} />
-			</Routes>
+			<CartContext.Provider value={{ cart, setCart }}>
+				<Navigation />
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/product' element={<Products />} />
+					<Route path='/product/:id' element={<SingleProduct />} />
+				</Routes>
+			</CartContext.Provider>
 		</>
 	)
 }
