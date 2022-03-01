@@ -1,7 +1,14 @@
 /** @format */
 
 import React from 'react'
+import CartData from '../Components/CartData'
 
-export const Cart = () => {
-	return <div>cart page</div>
+function Cart() {
+	return (
+		<div>
+			<CartData />
+		</div>
+	)
 }
+
+export default Cart

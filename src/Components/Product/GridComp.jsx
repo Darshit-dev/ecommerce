@@ -38,6 +38,8 @@ function GridComp(props) {
 		}, 1000)
 	}
 
+	//return function that will be rendered
+
 	return (
 		<div>
 			<Link to={`/product/${props.item.id}`}>
@@ -52,6 +54,7 @@ function GridComp(props) {
 				<div className='flex justify-between'>
 					<span>{props.item.price}₹</span>
 					<button
+						disabled={isAdded}
 						onClick={(event) => addToCart(event, props.item)}
 						className={`${
 							isAdded ? 'bg-green-500' : 'bg-yellow-400'
