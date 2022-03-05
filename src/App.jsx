@@ -5,12 +5,10 @@ import Navigation from './Components/Navigation'
 import Cart from './Pages/Cart'
 
 import { useState, useEffect, createContext } from 'react'
-// import { CartContext } from './Pages/CartContext'
+import { CartContext } from './Pages/CartContext'
 import Home from './Pages/Home'
 import Products from './Pages/Products'
 import SingleProduct from './Pages/SingleProduct'
-
-export const CartContext = createContext(null)
 
 const App = () => {
 	const [cart, setCart] = useState({})

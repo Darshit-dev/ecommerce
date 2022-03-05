@@ -2,8 +2,7 @@
 // @ts-check
 import { useContext } from 'react'
 import cartimage from '../../images/pizalogo.png'
-import { CartContext } from '../../App'
-
+import { CartContext } from '../../Pages/CartContext'
 function OneItem() {
 	const { cart } = useContext(CartContext)
 	console.log(cart)
@@ -25,7 +24,7 @@ function OneItem() {
 								+
 							</button>
 						</div>
-						<span className=' font-bold'>500</span>
+						<span className=' font-bold'>5000</span>
 						<button className='bg-red-400 px-4 py-1 rounded-full leading-none'>
 							Delete
 						</button>

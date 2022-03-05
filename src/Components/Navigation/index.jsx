@@ -10,7 +10,7 @@ import { CartContext } from '../../Pages/CartContext'
 const Navigation = () => {
 	const { cart } = useContext(CartContext)
 	return (
-		<nav className='my-3 px-20  flex items-center justify-between '>
+		<nav className='sticky py-2 bg-slate-50 shadow-md px-20  flex items-center justify-between '>
 			<Link to='/'>
 				<div className='flex'>
 					<img src={logo} alt='logo' className='h-8 mr-2' />
@@ -19,10 +19,18 @@ const Navigation = () => {
 			</Link>
 			<ul className='flex flex-row items-center'>
 				<li>
-					<Link to='/'>Home</Link>
+					<Link to='/'>
+						<span className='bg-slate-200 py-1 px-3 rounded-2xl leading-none shadow-sm '>
+							Home
+						</span>
+					</Link>
 				</li>
 				<li className='ml-5'>
-					<Link to='/product'>Product</Link>
+					<Link to='/product'>
+						<span className='bg-slate-200 py-1 px-3 rounded-2xl leading-none shadow-sm '>
+							Product1
+						</span>
+					</Link>
 				</li>
 				<li className='ml-5'>
 					<Link to='/cart'>
