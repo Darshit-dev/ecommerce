@@ -12,7 +12,7 @@ Just clone this repository or click the `Use This Template` button or use degit 
 npx degit KrishGarg/vite-react-tailwind-jit-template#main
 ```
 
-## Demo Site: https://vite-react-tailwind.surge.sh
+## Demo Site:https://nervous-jennings-9f06d5.netlify.app/
 
 ---
 
